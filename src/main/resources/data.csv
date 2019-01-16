@@ -1,0 +1,141 @@
+Date;input_name;input_id;level_name;level_id;low_name;low_id;activity_name;activity_id;second_activity_id;status;first_metric;second_metric
+2018/09/23;input name;5345641;level name 01;20255894;low name 01;138859100;activity name 01;12013725;7657029;Active;0;4
+2018/09/23;input name;5345641;level name 01;20255894;low name 01;138859100;total;;7657029;Active;0;4
+2018/10/09;input name;5345641;level name 01;20255894;low name 01;138859100;activity name 01;12013725;7657029;Active;0;4
+2018/10/10;input name;5345641;level name 02;20255896;low name 01;138859100;activity name 01;12013723;7657029;Active;0;3
+2018/10/09;input name;5345641;level name 01;20255894;low name 01;138859100;total;;7657029;Active;0;4
+2018/10/10;input name;5345641;level name 02;20255896;low name 01;138859100;total;;7657029;Active;0;3
+2018/09/23;input name;5345641;level name 03;20255900;low name 01;138859100;activity name 01;12013725;7657029;Active;0;2
+2018/09/23;input name;5345641;level name 03;20255900;low name 01;138859100;total;;7657029;Active;0;2
+2018/10/05;input name;5345641;level name 03;20255900;low name 01;138859100;activity name 01;12013725;7657029;Active;0;2
+2018/10/05;input name;5345641;level name 03;20255900;low name 01;138859100;total;;7657029;Active;0;2
+2018/09/25;input name;5345641;level name 04;20255901;low name 01;138859100;activity name 01;12013725;7657029;Active;0;7
+2018/10/01;input name;5345641;level name 04;20255901;low name 01;138859100;total;;7657029;Active;0;7
+2018/10/01;input name;5345641;level name 04;20255901;low name 01;138859100;activity name 01;12013725;7657029;Active;0;7
+2018/09/25;input name;5345641;level name 04;20255901;low name 01;138859100;total;;7657029;Active;0;7
+2018/10/04;input name;5345641;level name 04;20255901;low name 01;138859100;activity name 01;12013725;7657029;Active;0;7
+2018/10/11;input name;5345641;level name 04;20255901;low name 01;138859100;activity name 01;12013725;7657029;Active;5;0
+2018/10/15;input name;5345641;level name 04;20255901;low name 01;138859100;activity name 01;12013725;7657029;Active;0;3
+2018/10/16;input name;5345641;level name 04;20255901;low name 01;138859100;activity name 01;12013725;7657029;Active;0;3
+2018/10/20;input name;5345641;level name 04;20255901;low name 01;138859100;activity name 01;12013725;7657029;Active;0;2
+2018/10/03;input name;5345641;level name 04;20255901;low name 03;138897392;total;;7657029;Active;0;4
+2018/10/13;input name;5345641;level name 04;20255901;low name 03;138897392;total;;7657029;Active;0;3
+2018/10/15;input name;5345641;level name 04;20255901;low name 03;138897392;total;;7657029;Active;0;3
+2018/10/18;input name;5345641;level name 05;20465797;low name 01;138859100;activity name 01;12013725;7657029;Active;0;6
+2018/09/24;input name;5345641;level name 06;20716291;low name 01;138859100;activity name 01;12013725;7657029;Active;0;4
+2018/10/15;input name;5345641;level name 09;21497834;low name 01;138859100;activity name 01;12013725;7657029;Active;0;3
+2018/09/27;input name;5345641;level name 01;20255894;low name 02;138863496;activity name 01;12013725;7657029;Active;0;2
+2018/10/02;input name;5345641;level name 01;20255894;low name 02;138863496;activity name 01;12013725;7657029;Active;0;2
+2018/10/09;input name;5345641;level name 01;20255894;low name 02;138863496;activity name 01;12013725;7657029;Active;0;2
+2018/10/15;input name;5345641;level name 09;21497834;low name 01;138859100;total;;7657029;Active;0;3
+2018/09/27;input name;5345641;level name 01;20255894;low name 02;138863496;total;;7657029;Active;0;2
+2018/10/02;input name;5345641;level name 01;20255894;low name 02;138863496;total;;7657029;Active;0;2
+2018/10/09;input name;5345641;level name 01;20255894;low name 02;138863496;total;;7657029;Active;0;2
+2018/10/04;input name;5345641;level name 02;20255896;low name 02;138863496;total;;7657029;Active;0;1
+2018/09/25;input name;5345641;level name 04;20255901;low name 02;138863496;total;;7657029;Active;0;6
+2018/10/04;input name;5345641;level name 02;20255896;low name 02;138863496;activity name 01;12013725;7657029;Active;0;1
+2018/09/25;input name;5345641;level name 04;20255901;low name 02;138863496;activity name 01;12013725;7657029;Active;0;6
+2018/09/30;input name;5345641;level name 04;20255901;low name 02;138863496;activity name 01;12013725;7657029;Active;0;3
+2018/10/02;input name;5345641;level name 05;20465797;low name 02;138863496;activity name 01;12013725;7657029;Active;0;1
+2018/09/26;input name;5345641;level name 02;20255896;low name 03;138897392;activity name 01;12013725;7657029;Active;0;4
+2018/09/27;input name;5345641;level name 02;20255896;low name 03;138897392;activity name 01;12013723;7657029;Active;4;0
+2018/09/24;input name;5345641;level name 06;20716291;low name 01;138859100;total;;7657029;Active;0;4
+2018/09/30;input name;5345641;level name 04;20255901;low name 02;138863496;total;;7657029;Active;0;3
+2018/10/02;input name;5345641;level name 05;20465797;low name 02;138863496;total;;7657029;Active;0;1
+2018/09/26;input name;5345641;level name 02;20255896;low name 03;138897392;total;;7657029;Active;0;4
+2018/10/02;input name;5345641;level name 02;20255896;low name 03;138897392;activity name 01;12013723;7657029;Active;0;4
+2018/10/17;input name;5345641;level name 02;20255896;low name 03;138897392;activity name 01;12013725;7657029;Active;0;4
+2018/09/24;input name;5345641;level name 03;20255900;low name 03;138897392;activity name 01;12013725;7657029;Active;0;2
+2018/10/20;input name;5345641;level name 04;20255901;low name 01;138859100;total;;7657029;Active;0;2
+2018/10/18;input name;5345641;level name 05;20465797;low name 01;138859100;total;;7657029;Active;0;6
+2018/09/27;input name;5345641;level name 02;20255896;low name 03;138897392;total;;7657029;Active;4;0
+2018/10/02;input name;5345641;level name 02;20255896;low name 03;138897392;total;;;Active;0;4
+2018/10/03;input name;5345641;level name 04;20255901;low name 03;138897392;activity name 01;12013725;7657029;Active;0;4
+2018/10/13;input name;5345641;level name 04;20255901;low name 03;138897392;activity name 01;12013725;7657029;Active;0;3
+2018/10/04;input name;5345641;level name 04;20255901;low name 01;138859100;total;;7657029;Active;0;7
+2018/10/11;input name;5345641;level name 04;20255901;low name 01;138859100;total;;7657029;Active;5;0
+2018/10/15;input name;5345641;level name 04;20255901;low name 01;138859100;total;;7657029;Active;0;3
+2018/09/23;input name;5345641;level name 05;20465797;low name 03;138897392;total;;7657029;Active;0;3
+2018/09/28;input name;5345641;level name 05;20465797;low name 03;138897392;total;;7657029;Active;2;0
+2018/10/15;input name;5345641;level name 04;20255901;low name 03;138897392;activity name 01;12013725;7657029;Active;0;3
+2018/10/16;input name;5345641;level name 04;20255901;low name 01;138859100;total;;7657029;Active;0;3
+2018/10/17;input name;5345641;level name 02;20255896;low name 03;138897392;total;;7657029;Active;0;4
+2018/09/24;input name;5345641;level name 03;20255900;low name 03;138897392;total;;7657029;Active;0;2
+2018/09/23;input name;5345641;level name 05;20465797;low name 03;138897392;activity name 01;12013725;7657029;Active;0;3
+2018/09/28;input name;5345641;level name 05;20465797;low name 03;138897392;activity name 01;12013725;7657029;Active;2;0
+2018/09/28;another input name;6568145;level name 07;20767710;low name 04;141636281;activity name 01;12013725;7657029;Active;0;4
+2018/09/28;another input name;6568145;level name 07;20767710;low name 04;141636281;total;;7657029;Active;0;4
+2018/09/28;another input name;6568145;level name 08;20767712;low name 04;141636281;activity name 01;12013725;7657029;Active;0;8
+2018/09/28;another input name;6568145;level name 08;20767712;low name 04;141636281;total;;7657029;Active;0;8
+2018/10/05;another input name;6568145;level name 08;20767712;low name 04;141636281;activity name 01;12013725;7657029;Active;1;0
+2018/10/05;another input name;6568145;level name 08;20767712;low name 04;141636281;total;;7657029;Active;1;0
+2018/09/23;input name;5345651;level name 01;20255894;low name 01;138859100;activity name 01;12013725;7657029;Active;0;4
+2018/09/23;input name;5345651;level name 01;20255894;low name 01;138859100;total;;7657029;Active;0;4
+2018/10/09;input name;5345651;level name 01;20255894;low name 01;138859100;activity name 01;12013725;7657029;Active;0;4
+2018/10/10;input name;5345651;level name 02;20255896;low name 01;138859100;activity name 01;12013723;7657029;Active;0;3
+2018/10/09;input name;5345651;level name 01;20255894;low name 01;138859100;total;;7657029;Active;0;4
+2018/10/10;input name;5345651;level name 02;20255896;low name 01;138859100;total;;7657029;Active;0;3
+2018/09/23;input name;5345651;level name 03;20255900;low name 01;138859100;activity name 01;1201372534;7657029;Active;0;2
+2018/09/23;input name;5345651;level name 03;20255900;low name 01;138859100;total;;7657029;Active;0;2
+2018/10/05;input name;5345651;level name 03;20255900;low name 01;138859100;activity name 01;12013725;7657029;Active;0;2
+2018/10/05;input name;5345651;level name 03;20255900;low name 01;138859100;total;;7657029;Active;0;2
+2018/09/25;input name;5345651;level name 04;20255901;low name 01;138859100;activity name 01;12013725;7657029;Active;0;7
+2018/10/01;input name;5345651;level name 04;20255901;low name 01;138859100;total;;7657029;Active;0;7
+2018/10/01;input name;5345651;level name 04;20255901;low name 01;138859100;activity name 01;12013725;7657029;Active;0;7
+2018/09/25;input name;5345651;level name 04;20255901;low name 01;138859100;total;;7657029;Active;0;7
+2018/10/04;input name;5345651;level name 04;20255901;low name 01;138859100;activity name 01;12013725;7657029;Active;0;7
+2018/10/11;input name;5345651;level name 04;20255901;low name 01;138859100;activity name 01;12013725;7657029;Active;5;0
+2018/10/15;input name;5345651;level name 04;;low name 01;138859100;activity name 01;12013725;7657029;Active;0;3
+2018/10/16;input name;5345651;level name 04;20255901;low name 01;138859100;activity name 01;12013725;7657029;Active;0;3
+2018/10/20;input name;5345651;level name 04;20255901;low name 01;138859100;activity name 01;12013725;7657029;Active;0;2
+2018/10/03;input name;5345651;level name 04;20255901;low name 03;138897392;total;;7657029;Active;0;4
+2018/10/13;input name;5345651;level name 04;20255901;low name 03;138897392;total;;7657029;Active;0;3
+2018/10/15;input name;5345651;level name 04;20255901;low name 03;138897392;total;;7657029;Active;0;3
+2018/10/18;input name;5345651;level name 05;20465797;low name 01;138859100;activity name 01;12013725;7657029;Active;0;6
+2018/09/24;input name;5345651;level name 06;20716291;low name 01;138859100;activity name 01;12013725;7657029;Active;0;4
+2018/10/15;input name;5345651;level name 09;21497834;low name 01;138859100;activity name 01;12013725;7657029;Active;0;3
+2018/09/27;input name;5345651;level name 01;20255894;low name 02;138863496;activity name 01;12013725;7657029;Active;0;2
+2018/10/02;input name;5345651;level name 01;20255894;low name 02;138863496;activity name 01;12013725;7657029;Active;0;2
+2018/10/09;input name;5345651;level name 01;20255894;low name 02;138863496;activity name 01;12013725;7657029;Active;0;2
+2018/10/15;input name;5345651;level name 09;21497834;low name 01;138859100;total;;7657029;Active;0;3
+2018/09/27;input name;5345651;level name 01;20255894;low name 02;138863496;total;;7657029;Active;0;2
+2018/10/02;input name;5345651;level name 01;20255894;low name 02;138863496;total;;7657029;Active;0;2
+2018/10/09;input name;5345651;level name 01;20255894;low name 02;138863496;total;;7657029;Active;0;2
+2018/10/04;input name;5345651;level name 02;20255896;low name 02;138863496;total;;7657029;Active;0;1
+2018/09/25;input name;5345651;level name 04;20255901;low name 02;138863496;total;;7657029;Active;0;6
+2018/10/04;input name;5345651;level name 02;20255896;low name 02;138863496;activity name 01;12013725;7657029;Active;0;1
+2018/09/25;input name;5345651;level name 04;20255901;low name 02;138863496;activity name 01;12013725;7657029;Active;0;6
+2018/09/30;input name;5345651;level name 04;20255901;low name 02;138863496;activity name 01;12013725;7657029;Active;0;3
+2018/10/02;input name;5345651;level name 05;20465797;low name 02;138863496;activity name 01;12013725;7657029;Active;0;1
+2018/09/26;input name;5345651;level name 02;20255896;low name 03;138897392;activity name 01;12013725;7657029;Active;0;4
+2018/09/27;input name;5345651;level name 02;20255896;low name 03;138897392;activity name 01;12013723;7657029;Active;4;0
+2018/09/24;input name;5345651;level name 06;20716291;low name 01;138859100;total;;7657029;Active;0;4
+2018/09/30;input name;5345651;level name 04;20255901;low name 02;138863496;total;;7657029;Active;0;3
+2018/10/02;input name;5345651;level name 05;20465797;low name 02;138863496;total;;7657029;Active;0;1
+2018/09/26;input name;5345651;level name 02;20255896;low name 03;138897392;total;;7657029;Active;0;4
+2018/10/02;input name;5345651;level name 02;20255896;low name 03;138897392;activity name 01;12013723;7657029;Active;0;4
+2018/10/17;input name;5345651;level name 02;20255896;low name 03;138897392;activity name 01;12013725;7657029;Active;0;4
+2018/09/24;input name;5345651;level name 03;20255900;low name 03;138897392;activity name 01;12013725;7657029;Active;0;2
+2018/10/20;input name;5345651;level name 04;20255901;low name 01;138859100;total;;7657029;Active;0;2
+2018/10/18;input name;5345651;level name 05;20465797;low name 01;138859100;total;;7657029;Active;0;6
+2018/09/27;input name;5345651;level name 02;20255896;low name 03;138897392;total;;7657029;Active;4;0
+2018/10/02;input name;5345651;level name 02;20255896;low name 03;138897392;total;;7657029;Active;0;4
+2018/10/03;input name;5345651;level name 04;20255901;low name 03;138897392;activity name 01;12013725;7657029;Active;0;4
+2018/10/13;input name;5345651;level name 04;20255901;low name 03;138897392;activity name 01;12013725;7657029;Active;0;3
+2018/10/04;input name;5345651;level name 04;20255901;low name 01;138859100;total;;7657029;Active;0;7
+2018/10/11;input name;5345651;level name 04;20255901;low name 01;138859100;total;;7657029;Active;5;0
+2018/10/15;input name;5345651;level name 04;20255901;low name 01;138859100;total;;7657029;Active;0;3
+2018/09/23;input name;5345651;level name 05;20465797;low name 03;138897392;total;;7657029;Active;0;3
+2018/09/28;input name;5345651;level name 05;20465797;low name 03;138897392;total;;7657029;Active;2;0
+2018/10/15;input name;5345651;level name 04;20255901;low name 03;138897392;activity name 01;12013725;7657029;Active;0;3
+2018/10/16;input name;5345651;level name 04;20255901;low name 01;138859100;total;;7657029;Active;0;3
+2018/10/17;input name;5345651;level name 02;20255896;low name 03;138897392;total;;7657029;Active;0;4
+2018/09/24;input name;5345651;level name 03;20255900;low name 03;138897392;total;;7657029;Active;0;2
+2018/09/23;input name;5345651;level name 05;20465797;low name 03;138897392;activity name 01;12013725;7657029;Active;0;3
+2018/09/28;input name;5345651;level name 05;20465797;low name 03;138897392;activity name 01;12013725;7657029;Active;2;0
+2018/09/28;another input name;6568165;level name 07;20767710;low name 04;141636281;activity name 01;12013725;7657029;Active;0;4
+2018/09/28;another input name;6568165;level name 07;20767710;low name 04;141636281;total;;7657029;Active;0;4
+2018/09/28;another input name;6568165;level name 08;20767712;low name 04;141636281;activity name 01;12013725;7657029;Active;0;8
+2018/09/28;another input name;6568165;level name 08;20767712;low name 04;141636281;total;;7657029;Active;0;8
+2018/10/05;another input name;6568165;level name 08;20767712;low name 04;141636281;activity name 01;12013725;7657029;Active;1;0
+2018/10/05;another input name;6568165;level name 08;20767712;low name 04;141636281;total;;7657029;Active;1;0
