@@ -1,3 +1,5 @@
+package bench
+
 import java.lang.NumberFormatException
 import org.apache.spark.sql.types.IntegerType
 import org.apache.spark.sql.{DataFrame, Dataset, SparkSession}
@@ -5,14 +7,18 @@ import scala.io.Source
 import scala.util.parsing.json.{JSON, JSONObject}
 
 
-class VocabularyNotFoundException(message: String) extends Exception(message)
+class InputDataException(message: String) extends Exception(message)
 
 case class Codes(id: Int = -1, minutes_metric_1: Int = -1, minutes_metric_2: Int = -1)
+case class DataRow(Date: String, input_name: String, input_id: Int, level_name: String, level_id: Int, low_name: String, low_id: Int,
+                   activity_name: String, activity_id: Int, second_activity_id: Int, status: String, first_metric: Int, second_metric: Int)
 
 
 object BenchTestApp {
 
   implicit def bool2int(bool: Boolean): Int = if (bool) 1 else 0
+  val outputCols = Seq("Date", "input_name", "input_id", "level_name", "level_id", "activity_name", "activity_id", "v1", "v7",
+                       "v30", "v90", "c1", "c7", "c30", "c90")
     
   def main(args: Array[String]): Unit = {
 
@@ -21,7 +27,8 @@ object BenchTestApp {
 
     implicit val spark: SparkSession = getSpark
 
-    val output = createOutput(vocabPath, dataPath)
+    val (valid, errored) = createOutput(vocabPath, dataPath)
+    writeOutput(valid)
 
     spark.stop
   }
@@ -53,7 +60,22 @@ object BenchTestApp {
     println(errored.show())
     val valid = joined.where(condition === false)
     println(valid.show())
-    (errored, valid)
+    (valid, errored)
+  }
+
+  // def writeErrors(df: DataFrame): Unit = {
+  //   df.select(.map(df(_)): _*).repartition(1).write
+  //     .format("com.databricks.spark.csv")
+  //     .option("header", "true")
+  //     .save("src/main/resources/errors.csv")
+  // }
+
+  def writeOutput(df: DataFrame): Unit = {
+    df.select(outputCols.map(df(_)): _*).repartition(1).write
+      .format("com.databricks.spark.csv")
+      .option("header", "true")
+      .mode("overwrite")
+      .save("src/main/resources/output.csv")
   }
 
   def loadData(dataPath: String)(implicit spark: SparkSession): DataFrame = {
@@ -66,7 +88,7 @@ object BenchTestApp {
 
   def buildVocabularyDataFrame(json: JSONObject)(implicit spark: SparkSession): DataFrame = { 
     import spark.implicits._
-    val csvRows: List[String] = json.obj("data").toString().lines.toList
+    val csvRows: Array[String] = json.obj("data").toString().split("\n")
     val csvData: Dataset[String] = spark.createDataset(csvRows)
     val csvCodes = spark.read.option("header", "true").option("inferSchema", "true").csv(csvData).toDF().select("Codes").rdd.map {
       row => row(0) match {
@@ -88,7 +110,7 @@ object BenchTestApp {
     val resource = Source.fromResource(jsonPath)
     JSON.parseFull(resource.getLines.mkString("")).get match {
       case json: Map[String, Any] => new JSONObject(json)
-      case _ => throw new VocabularyNotFoundException(jsonPath) 
+      case _ => throw new Exception(s"File missing: $jsonPath")
     }
   }
 }
