@@ -1,2 +1,5 @@
 # Benchmark
-`sbt run`
+```
+sbt test
+sbt run
+```
