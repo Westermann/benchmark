@@ -16,12 +16,10 @@ class BenchTestAppSpec extends FlatSpec {
     val (valid, errored) = createOutput(vocab, data)
 
     val expectedValid = spark.read.format("csv")
-      .option("header", "true")
-      .option("delimiter", ";")
+      .option("header", "true").option("delimiter", ";")
       .load("src/test/resources/test_output.csv")
     val expectedErrors = spark.read.format("csv")
-      .option("header", "true")
-      .option("delimiter", ";")
+      .option("header", "true").option("delimiter", ";")
       .load("src/test/resources/test_errors.csv")
 
     println(valid.show())

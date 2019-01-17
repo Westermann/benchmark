@@ -57,10 +57,8 @@ object BenchTestApp {
   }
 
   def writeOutput(df: DataFrame, outputCols: Seq[String], name: String): Unit = {
-    df.select(outputCols.map(df(_)): _*).repartition(1).write
-      .format("com.databricks.spark.csv")
-      .option("header", "true")
-      .option("delimiter",";")
+    df.select(outputCols.map(df(_)): _*).repartition(1).write.format("csv")
+      .option("header", "true").option("delimiter",";")
       .mode("overwrite")
       .save(s"src/main/resources/$name.csv")
   }
