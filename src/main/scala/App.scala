@@ -1,6 +1,5 @@
-import java.lang.NumberFormatException
 import org.apache.spark.sql.types.IntegerType
-import org.apache.spark.sql.{DataFrame, Dataset, SparkSession}
+import org.apache.spark.sql.{DataFrame, SparkSession}
 import scala.io.Source
 import scala.util.parsing.json.{JSON, JSONObject}
 
@@ -18,8 +17,8 @@ object BenchTestApp {
 
     implicit val spark: SparkSession = getSpark
 
-    val vocabJson = loadVocabularyJson(vocabPath)
-    val vocab = buildVocabularyDataFrame(vocabJson)
+    val vocabJson = loadVocabJson(vocabPath)
+    val vocab = buildVocabData(vocabJson)
     val data = loadData(dataPath)
 
     val (valid, errored) = createOutput(vocab, data)
@@ -27,14 +26,13 @@ object BenchTestApp {
     writeOutput(valid, outputCols, "output")
     writeOutput(errored, data.columns, "errors")
 
-    spark.stop
+    spark.stop()
   }
 
   def createOutput(vocab: DataFrame, data: DataFrame)(implicit spark: SparkSession): Tuple2[DataFrame, DataFrame] = {
     var joined = data.join(vocab, data.col("activity_id") === vocab.col("id"), "left_outer").na.fill(-1)
     val minsPerDay = 1440
-    val numDays = Seq(1, 7, 30, 90)
-    for (i <- numDays){
+    for (i <- Seq(1, 7, 30, 90)){
       joined = joined
         .withColumn(s"v$i", (
           (joined("minutes_metric_1") === minsPerDay * i).cast(IntegerType) * joined("first_metric")
@@ -65,17 +63,17 @@ object BenchTestApp {
   }
 
   def getSpark: SparkSession = {
-    SparkSession.builder.appName("Embedding").config("spark.master", "local").getOrCreate()
+    SparkSession.builder.appName("BenchTest").config("spark.master", "local").getOrCreate()
   }
 
-  def buildVocabularyDataFrame(json: JSONObject)(implicit spark: SparkSession): DataFrame = { 
+  def buildVocabData(json: JSONObject)(implicit spark: SparkSession): DataFrame = { 
     import spark.implicits._
     spark.sparkContext.parallelize(json.obj("data").toString().split("\n"))
       .map(_.split(",")(6).filterNot("() " contains _).split(";").padTo(3, ""))
-      .map((_(0), _(1), _(2))).toDF("id", "minutes_metric_1", "minutes_metric_2")
+      .map(r => (r(0), r(1), r(2))).toDF("id", "minutes_metric_1", "minutes_metric_2")
   }
 
-  def loadVocabularyJson(jsonPath: String): JSONObject = {
+  def loadVocabJson(jsonPath: String): JSONObject = {
     val resource = Source.fromResource(jsonPath)
     JSON.parseFull(resource.getLines.mkString("")).get match {
       case json: Map[String, Any] => new JSONObject(json)
