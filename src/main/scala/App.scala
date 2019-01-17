@@ -1,13 +1,8 @@
 import java.lang.NumberFormatException
-import org.apache.spark.sql.types._
+import org.apache.spark.sql.types.IntegerType
 import org.apache.spark.sql.{DataFrame, Dataset, SparkSession}
 import scala.io.Source
 import scala.util.parsing.json.{JSON, JSONObject}
-
-
-class InputDataException(message: String) extends Exception(message)
-
-case class Codes(id: Int = -1, minutes_metric_1: Int = -1, minutes_metric_2: Int = -1)
 
 
 object BenchTestApp {
@@ -48,7 +43,6 @@ object BenchTestApp {
           (joined("minutes_metric_2") === minsPerDay * i).cast(IntegerType) * joined("second_metric")
         ).cast(IntegerType))
     }
-    /* println(joined.show()) */
     
     val condition = joined("activity_id").isNull.or(joined("input_id").isNull.or(joined("level_id").isNull.or(joined("id") === -1)))
     val errored = joined.where(condition === true)
@@ -76,18 +70,16 @@ object BenchTestApp {
 
   def buildVocabularyDataFrame(json: JSONObject)(implicit spark: SparkSession): DataFrame = { 
     import spark.implicits._
-    val csvCodes = spark.sparkContext.parallelize(json.obj("data").toString().split("\n"))
+    spark.sparkContext.parallelize(json.obj("data").toString().split("\n"))
       .map(_.split(",")(6).filterNot("() " contains _).split(";").padTo(3, ""))
-      .map(r => (r(0), r(1), r(2)))
-      .toDF("id", "minutes_metric_1", "minutes_metric_2")
-    csvCodes
+      .map((_(0), _(1), _(2))).toDF("id", "minutes_metric_1", "minutes_metric_2")
   }
 
   def loadVocabularyJson(jsonPath: String): JSONObject = {
     val resource = Source.fromResource(jsonPath)
     JSON.parseFull(resource.getLines.mkString("")).get match {
       case json: Map[String, Any] => new JSONObject(json)
-      case _ => throw new Exception(s"File missing: $jsonPath")
+      case _ => throw new Exception(s"Vocab invalid: $jsonPath")
     }
   }
 }
