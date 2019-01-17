@@ -10,7 +10,9 @@ lazy val root = (project in file("."))
     name := "Bench Test Spark App",
     libraryDependencies ++= Seq(
       "org.apache.spark" %% "spark-core" % "2.4.0",
-      "org.apache.spark" %% "spark-sql" % "2.4.0"
+      "org.apache.spark" %% "spark-sql" % "2.4.0",
+      "org.scalactic" %% "scalactic" % "3.0.5",
+      "org.scalatest" %% "scalatest" % "3.0.5" % "test"
     )
 )
 

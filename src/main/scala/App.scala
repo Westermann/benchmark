@@ -1,3 +1,5 @@
+package com.westermann.bench
+
 import org.apache.spark.sql.types.IntegerType
 import org.apache.spark.sql.{DataFrame, SparkSession}
 import scala.io.Source
@@ -31,7 +33,7 @@ object BenchTestApp {
 
   def createOutput(vocab: DataFrame, data: DataFrame)(implicit spark: SparkSession): Tuple2[DataFrame, DataFrame] = {
 
-    var joined = data.join(vocab, data.col("activity_id") === vocab.col("id"), "left_outer").na.fill(-1)
+    var joined = data.join(vocab, data.col("activity_id") === vocab.col("id"), "left_outer")
     val minsPerDay = 1440
 
     for (i <- Seq(1, 7, 30, 90)){
@@ -44,7 +46,10 @@ object BenchTestApp {
         ).cast(IntegerType))
     }
     
-    val condition = joined("activity_id").isNull.or(joined("input_id").isNull.or(joined("level_id").isNull.or(joined("id") === -1)))
+    val condition = joined("activity_id").isNull
+      .or(joined("input_id").isNull
+      .or(joined("level_id").isNull
+      .or(joined("id").isNull)))
     val errored = joined.where(condition === true)
     val valid = joined.where(condition === false)
 
@@ -55,6 +60,7 @@ object BenchTestApp {
     df.select(outputCols.map(df(_)): _*).repartition(1).write
       .format("com.databricks.spark.csv")
       .option("header", "true")
+      .option("delimiter",";")
       .mode("overwrite")
       .save(s"src/main/resources/$name.csv")
   }
