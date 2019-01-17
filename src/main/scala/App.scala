@@ -30,8 +30,10 @@ object BenchTestApp {
   }
 
   def createOutput(vocab: DataFrame, data: DataFrame)(implicit spark: SparkSession): Tuple2[DataFrame, DataFrame] = {
+
     var joined = data.join(vocab, data.col("activity_id") === vocab.col("id"), "left_outer").na.fill(-1)
     val minsPerDay = 1440
+
     for (i <- Seq(1, 7, 30, 90)){
       joined = joined
         .withColumn(s"v$i", (
@@ -44,9 +46,8 @@ object BenchTestApp {
     
     val condition = joined("activity_id").isNull.or(joined("input_id").isNull.or(joined("level_id").isNull.or(joined("id") === -1)))
     val errored = joined.where(condition === true)
-    println(errored.show())
     val valid = joined.where(condition === false)
-    println(valid.show())
+
     (valid, errored)
   }
 
